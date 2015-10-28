@@ -1,0 +1,41 @@
+img {
+	width:280px;
+	padding:10px;
+}
+
+.grid {
+	margin: 0 auto;
+}
+
+.grid-sizer,
+.grid-item {}
+
+header {
+	display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+h1 {
+	color:blue;
+	text-decoration:underline;
+	display:inline-block;
+}
+
+h1 span:nth-child(even) {
+	text-decoration:underline;
+	color:red;
+}
+
+h1 span:nth-child(odd) {
+	text-decoration:underline;
+	color:blue;
+}
+
+nav {
+	display:inline-block;
+}
+
+nav ul li {
+	display:inline-block;
+}

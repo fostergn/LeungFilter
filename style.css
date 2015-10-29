@@ -38,4 +38,9 @@ nav {
 
 nav ul li {
 	display:inline-block;
+	margin-right:20px;
+}
+
+.selected-nav {
+	border-bottom:1px solid blue;
 }

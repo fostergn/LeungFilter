@@ -138,8 +138,8 @@ nav ul li {
 	width: 100%;
     height: 100%;
     background-size: cover;
-    -webkit-filter: blur(45px);
-  	filter: blur(45px);
+    -webkit-filter: blur(35px);
+  	filter: blur(35px);
     position:absolute;
     z-index:-10;
     top:0;
@@ -207,7 +207,7 @@ nav ul li {
     transform: rotate(90deg);
     font-size: 1.5em;
     border: 1px solid black;
-    padding: 1px;
+    padding: 1px 4px;
 
 }
 
@@ -223,4 +223,52 @@ nav ul li {
 
 .full-image {
 	border:1px solid blue;
+}
+
+
+/***********************************
+*
+*	MEDIA QUERIES
+*
+************************************/
+
+@media (max-width: 900px) {
+	header {
+		display:block;
+	}
+
+	nav {
+		margin-top:10px;
+	}
+
+	nav ul li {
+		margin-right: 10px;
+    	font-size: .8em;
+	}
+  .feature-info {
+    width: 20%;
+    padding-left: 10%;
+    font-size: 1.5em;
+    display:inline-block;
+  }
+
+  .feature-image {
+  	margin-right: 1em;
+  }
+
+  .feature-tag {
+  	right: -5%; 
+    top: 0%; 
+    transform: rotate(-90deg);
+  }
+
+  .related p {
+  	bottom:9%;
+  }
+
+  .related img {
+  	height:10vh;
+  	padding-top: 2px;
+    padding-bottom: 2px;
+  }
 }

@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title>miranda masonry</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width">
+
+</head>
+<body>
+	<header>
+		<h1>
+			<span>m</span><span>i</span><span>r</span><span>a</span><span>n</span><span>d</span><span>a</span> <span>l</span><span>e</span><span>u</span><span>n</span><span>g</span>
+		</h1>
+		<nav>
+			<ul>
+				<li>food</li>
+				<li class="selected-nav">feet</li>
+				<li>form</li>
+				<li>texture</li>
+				<li>text</li>
+				<li>threads</li>
+				<li>people</li>
+				<li>rando</li>
+			</ul>
+		</nav>
+	</header>
+	<main class="item">
+		<div class="feature">
+			<div class="feature-info">
+				<h2>autumn</h2>
+				<p>
+					lately;<br>
+					there she goes,<br>
+					egghead.
+				</p>
+			</div>
+			<div class="feature-image">
+				<img src="img/98/11.jpg">
+				<p class="feature-tag">clothing</p>
+				<div class="feature-image-background" style="background-image:url('img/98/11.jpg');">
+				</div>
+			</div>
+		</div>
+		<div class="related">
+			<div>
+				<img src="img/98/6.jpg">
+			</div>
+			<div>
+				<img src="img/98/7.jpg">
+			</div>
+			<div>
+				<img src="img/98/8.jpg">
+			</div>
+			<p>related</p>
+		</div>
+		<div class="related-expanded grid">
+			<img class="grid-item" src="img/98/1.jpg">
+			<img class="grid-item" src="img/98/2.jpg">
+			<img class="grid-item" src="img/98/3.jpg">
+			<img class="grid-item" src="img/98/4.jpg">
+			<img class="grid-item" src="img/98/5.jpg">
+			<img class="grid-item" src="img/98/6.jpg">
+			<img class="grid-item" src="img/98/7.jpg">
+			<img class="grid-item" src="img/98/8.jpg">
+			<img class="grid-item" src="img/98/9.jpg">
+			<img class="grid-item full-image" src="img/98/full.jpg">
+		</div>
+	</main>
+
+	<script>
+	$('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: 300,
+    isFitWidth: true
+  });
+	</script>
+
+</body>
+</html>

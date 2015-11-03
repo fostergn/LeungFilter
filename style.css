@@ -299,6 +299,7 @@ nav ul li input:focus {
     	margin-bottom: 2px;
 	}
   .feature-info {
+    margin-top:4em;
     width: 20%;
     padding-left: 10%;
     font-size: 1.5em;

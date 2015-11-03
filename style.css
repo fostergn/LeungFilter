@@ -65,7 +65,7 @@ table {
 .grid-item {}
 
 header {
-	  margin: -2em 2em 2em;
+	  margin: -2em 0em 0em;
     position: fixed;
     z-index: 100;
     background: white;
@@ -78,6 +78,7 @@ h1 {
 	text-decoration:underline;
 	display:inline-block;
 	font-size:2em;
+  padding-left:2em;
 }
 
 h1 span:nth-child(even) {
@@ -93,6 +94,7 @@ h1 span:nth-child(odd) {
 nav {
 	float:right;
   padding-top:12px;
+  padding-right:2em;
 }
 
 nav ul li {

@@ -58,17 +58,19 @@ table {
 }
 
 .grid {
-	margin: 0 auto;
+	margin: 2em auto;
 }
 
 .grid-sizer,
 .grid-item {}
 
 header {
-	display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin:0 2em 2em;
+	  margin: -2em 2em 2em;
+    position: fixed;
+    z-index: 100;
+    background: white;
+    width: 100%;
+    padding-bottom: 12px;
 }
 
 h1 {
@@ -89,7 +91,8 @@ h1 span:nth-child(odd) {
 }
 
 nav {
-	display:inline-block;
+	float:right;
+  padding-top:12px;
 }
 
 nav ul li {
@@ -124,6 +127,7 @@ nav ul li input:focus {
 
 .item {
 	width:100%;
+  margin-top:2em;
 }
 
 .feature {
@@ -236,7 +240,7 @@ nav ul li input:focus {
 
 .related .tag {
 	position:absolute;
-    right: 1%;
+    right: 3%;
     bottom: 9%;
     transform: rotate(90deg);
     font-size: 1.5em;

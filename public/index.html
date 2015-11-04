@@ -25,14 +25,7 @@
 		</h1>
 		<nav>
 			<ul>
-				<li>food</li>
-				<li>feet</li>
-				<li>form</li>
-				<li>text</li>
-				<li>threads</li>
-				<li>people</li>
-				<li>plumes</li>
-				<li>other</li>
+				<li ng-repeat="category in categories" ng-click="selectNav($index)" ng-class="{'selected-nav': category === selected}">{{category}}</li>
 				<li><input type="text" name="fname"></li>
 				<li>*</li>
 			</ul>
@@ -42,7 +35,7 @@
 	<div masonry class="masonry grid js-masonry"
   data-masonry-options='{ "isFitWidth":true, "columnWidth": 300}'>
 		<div class="masonry-brick" ng-repeat="drawing in drawings">
-			<img ng-src="img/drawings/{{drawing.url}}">
+			<img ng-click="selectDrawing(drawing._id)" ng-src="img/drawings/{{drawing.url}}">
 		</div>
 	</div>
 

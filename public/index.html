@@ -1,0 +1,50 @@
+<html ng-app="leungApp">
+<head>
+	<title>miranda leung illustration</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
+	<script src="https://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="angular-masonry.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/services/drawings.js"></script>
+	<script src="js/controllers/main.js"></script>
+	<style>
+		img {
+			width:280px;
+		}
+	</style>
+
+</head>
+<body ng-controller="homeCtrl">
+	<header>
+		<h1>
+			<span>m</span><span>i</span><span>r</span><span>a</span><span>n</span><span>d</span><span>a</span> <span>l</span><span>e</span><span>u</span><span>n</span><span>g</span>
+		</h1>
+		<nav>
+			<ul>
+				<li>food</li>
+				<li>feet</li>
+				<li>form</li>
+				<li>text</li>
+				<li>threads</li>
+				<li>people</li>
+				<li>plumes</li>
+				<li>other</li>
+				<li><input type="text" name="fname"></li>
+				<li>*</li>
+			</ul>
+		</nav>
+	</header>
+	{{saying}}
+	<div masonry class="masonry grid js-masonry"
+  data-masonry-options='{ "isFitWidth":true, "columnWidth": 300}'>
+		<div class="masonry-brick" ng-repeat="drawing in drawings">
+			<img ng-src="img/drawings/{{drawing.url}}">
+		</div>
+	</div>
+
+</body>
+</html>

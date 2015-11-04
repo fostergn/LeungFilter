@@ -145,6 +145,12 @@ module.exports = function(app){
 		});
 	});
 
+	////////////////////////////////////////////
+	// Get individual drawing's related content
+	////////////////////////////////////////////
+
+		//code to find related
+
 	/////////////////////////////
 	// Get drawings by tag
 	/////////////////////////////
@@ -174,5 +180,9 @@ module.exports = function(app){
 
             res.json(drawings); // return all todos in JSON format
         });
+	});
+
+	app.get('*', function(req, res){
+        res.sendFile(__dirname + '/public/index.html');
 	});
 }

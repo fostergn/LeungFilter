@@ -18,6 +18,7 @@
   "homepage": "https://github.com/fostergn/LeungFilter#readme",
   "description": "",
   "dependencies": {
+    "angular-masonry": "^0.13.0",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "method-override": "^2.3.5",

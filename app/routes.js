@@ -115,6 +115,18 @@ module.exports = function(app){
         });
     });
 
+    app.get('/api/drawings/category/:category', function(req, res) {
+
+        Drawing.findOne({category:req.params.category}, 'name url', function(err, drawings) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(drawings); // return all todos in JSON format
+        });
+    });
+
     /////////////////////////////
 	// Get all drawings
 	/////////////////////////////
@@ -131,25 +143,32 @@ module.exports = function(app){
         });
     });
 
+    ////////////////////////////////////////////
+    // Get random drawing
+    ////////////////////////////////////////////
+
+    app.get('/api/drawings/random', function(req, res){
+        Drawing.find({}).limit(1).skip(Math.floor(Math.random() * 290)).exec(function(err, drawing){
+            if(err)
+                res.send(err)
+
+            res.json(drawing);
+        });
+    });
+
     /////////////////////////////
 	// Get individual drawings
 	/////////////////////////////
 
 	app.get('/api/drawings/:_id', function(req, res){
 
-		Drawing.find({_id:req.params._id}, function(err, drawing){
+		Drawing.findById(req.params._id, function(err, drawing){
 			if (err)
 				res.send(err)
 
 			res.json(drawing);
 		});
 	});
-
-	////////////////////////////////////////////
-	// Get individual drawing's related content
-	////////////////////////////////////////////
-
-		//code to find related
 
 	/////////////////////////////
 	// Get drawings by tag
@@ -165,6 +184,22 @@ module.exports = function(app){
             res.json(drawings); // return all todos in JSON format
         });
 	});
+
+    /////////////////////////////
+    // Get drawings for the complete image
+    /////////////////////////////
+
+    app.get('/api/drawings/full/:full', function(req, res){
+        var query = req.params.full +"/full.jpg"
+        Drawing.find({"full_image.url":query}, function(err, drawings) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(drawings); // return all todos in JSON format
+        });
+    });
 
 	/////////////////////////////////////////
 	// Get drawings by searching description
@@ -182,7 +217,9 @@ module.exports = function(app){
         });
 	});
 
+
+
 	app.get('*', function(req, res){
-        res.sendFile(__dirname + '/public/index.html');
+        res.sendfile('index.html', { root: './public' });
 	});
 }

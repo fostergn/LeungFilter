@@ -1,0 +1,27 @@
+	<main class="item">
+		<div class="feature">
+			<div class="feature-info">
+				<h2>{{drawing.name}}</h2>
+				<p>
+					{{drawing.description}}
+				</p>
+			</div>
+			<div class="feature-image">
+				<img ng-src="img/drawings/{{drawing.url}}">
+				<a href="tag/{{drawing.tag}}"><p class="feature-tag">{{drawing.tag}}</p></a>
+				<div class="feature-image-background" style="background-image:url('img/drawings/{{drawing.url}}');">
+				</div>
+			</div>
+		</div>
+		<div class="related">
+			<div ng-repeat="rel in related">
+				<a href="{{rel.link}}"><img ng-src="img/drawings/{{rel.url}}"></a>
+			</div>
+			<div class="tag">
+				<p>related</p>
+			</div>
+		</div>
+	</main>
+
+</body>
+</html>

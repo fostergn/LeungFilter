@@ -1,0 +1,6 @@
+<div masonry class="masonry grid js-masonry"
+  data-masonry-options='{ "isFitWidth":true, "columnWidth": 300}'>
+		<div class="masonry-brick" ng-repeat="drawing in drawings">
+			<a href="item/{{drawing._id}}"><img ng-src="img/drawings/{{drawing.url}}"></a>
+		</div>
+	</div>

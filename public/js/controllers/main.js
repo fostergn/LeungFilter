@@ -79,7 +79,7 @@ angular.module('mainController', ['wu.masonry'])
                 description:"one moment please"
             }
         }];
-        
+
         Drawings.getTag($routeParams.tag)
             .success(function(data){
                 $scope.drawings = data;
@@ -87,6 +87,7 @@ angular.module('mainController', ['wu.masonry'])
     })
 
     .controller('subItemCtrl', function($scope, Drawings, $routeParams){
+        $scope.infoToggleState = false;
         $scope.drawings = [{
             url:"waiting.gif",
             full_image:{
@@ -96,6 +97,21 @@ angular.module('mainController', ['wu.masonry'])
             }
         }];
         $scope.showParts = true;
+
+        $scope.infoToggle = function(){
+            $scope.infoToggleState = !($scope.infoToggleState);
+            console.log($scope.infoToggleState);
+            
+            if($scope.infoToggleState){
+                $('.related').animate({width:'0%'});
+                $('.full-info-toggle').css({right:'-1vw'});
+                $('.full-info-toggle').text("+")
+            } else {
+                $('.related').animate({width:'40%'});
+                $('.full-info-toggle').css({right:'-5vw'});
+                $('.full-info-toggle').text("x")
+            }
+        }
 
         Drawings.getFull($routeParams.id)
             .success(function(data){

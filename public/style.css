@@ -303,6 +303,14 @@ nav ul li input:focus {
   width:100%;
 }
 
+.full-info-toggle {
+  position:absolute;
+  right:-5vw;
+  top:5px;
+  font-size:1.3em;
+  cursor:pointer;
+}
+
 /***********************************
 *
 *	MEDIA QUERIES

@@ -2,12 +2,13 @@
 angular.module('mainController', ['wu.masonry'])
 
     .controller('mainCtrl', function($scope, Drawings){
+        $scope.drawings = [{url:"waiting.gif"}];
         $scope.categories = ["food", "feet", "form", "text", "threads", "people", "plumes", "other"];
         var random = Math.floor(Math.random() * $scope.categories.length);
         $scope.selected = $scope.categories[random];
 
         $scope.selectNav = function(index){
-            $scope.drawings = {};
+            $scope.drawings = [{url:"waiting.gif"}];
             $scope.selected = $scope.categories[index];
             console.log($scope.selected);
             Drawings.getCategory($scope.selected)
@@ -37,15 +38,15 @@ angular.module('mainController', ['wu.masonry'])
         $scope.drawing = {
             name:"hold on",
             description:"for one more second",
-            url:"100/1.jpg",
+            url:"waiting.gif",
             tags:["..."],
             tag:"..."
         };
 
         $scope.related = [
-            {url:"105/1.jpg"},
-            {url:"105/2.jpg"},
-            {url:"105/3.jpg"}
+            {url:"waiting.gif"},
+            {url:"waiting.gif"},
+            {url:"waiting.gif"}
         ];
 
         Drawings.getDrawing($routeParams.id)
@@ -70,6 +71,15 @@ angular.module('mainController', ['wu.masonry'])
     })
 
     .controller('tagCtrl', function($scope, Drawings, $routeParams){
+        $scope.drawings = [{
+            url:"waiting.gif",
+            full_image:{
+                url:"waiting.gif",
+                name:"1 sec...",
+                description:"one moment please"
+            }
+        }];
+        
         Drawings.getTag($routeParams.tag)
             .success(function(data){
                 $scope.drawings = data;
@@ -77,8 +87,22 @@ angular.module('mainController', ['wu.masonry'])
     })
 
     .controller('subItemCtrl', function($scope, Drawings, $routeParams){
+        $scope.drawings = [{
+            url:"waiting.gif",
+            full_image:{
+                url:"waiting.gif",
+                name:"1 sec...",
+                description:"one moment please"
+            }
+        }];
+        $scope.showParts = true;
+
         Drawings.getFull($routeParams.id)
             .success(function(data){
                 $scope.drawings = data;
             });
+
+        $scope.showFull = function(){
+            $scope.showParts = !($scope.showParts);
+        }
     });

@@ -1,16 +1,19 @@
 	<main class="item">
-		<div masonry class="masonry grid js-masonry"
+		<div ng-if="showParts" masonry class="masonry grid js-masonry"
 		  data-masonry-options='{ "isFitWidth":true, "columnWidth": 300}'>
 				<div class="masonry-brick" ng-repeat="drawing in drawings">
 					<a href="item/{{drawing._id}}"><img ng-src="img/drawings/{{drawing.url}}"></a>
 				</div>
+		</div>
+		<div class="show-full-image" ng-if="!showParts">
+			<img ng-src="img/drawings/{{drawings[0].full_image.url}}">
 		</div>
 		<div class="related">
 			<div class="description">
 				<p>{{drawings[0].full_image.description}}</p>
 			</div>
 			<div>
-				<img ng-src="img/drawings/{{drawings[0].full_image.url}}">
+				<img ng-click="showFull()" ng-src="img/drawings/{{drawings[0].full_image.url}}">
 			</div>
 			<div class="tag">
 				<p>{{drawings[0].full_image.name}}</p>

@@ -288,6 +288,20 @@ nav ul li input:focus {
 	border:1px solid blue;
 }
 
+/***********************************
+*
+* FULL IMAGE
+*
+************************************/
+
+.show-full-image {
+  width:100vw;
+  height:100vh;
+}
+
+.show-full-image img {
+  width:100%;
+}
 
 /***********************************
 *

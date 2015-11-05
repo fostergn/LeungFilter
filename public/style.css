@@ -70,6 +70,8 @@ a, a:visited, a:active, a:hover {
 
 .grid {
 	margin: 2em auto;
+  position:relative;
+  top:3em;
 }
 
 .grid-sizer,
@@ -143,6 +145,7 @@ nav ul li input:focus {
 .feature {
 	display:flex;
 	justify-content:space-between;
+  padding-top:2em;
 }
 
 .feature-info {

@@ -4,6 +4,7 @@
 	<base href="/">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/png" href="img/icon.png" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
 	<script src="https://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
@@ -28,7 +29,7 @@
 		<nav>
 			<ul>
 				<a href="/"><li ng-repeat="category in categories" ng-click="selectNav($index)" ng-class="{'selected-nav': category === selected}">{{category}}</li></a>
-				<li><input type="text" name="fname"></li>
+				<li><input type="text" ng-change="search()" ng-model="searchStr" ng-model-options="{debounce: 1000}"></li>
 			</ul>
 		</nav>
 	</header>

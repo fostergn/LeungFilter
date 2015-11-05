@@ -11,8 +11,8 @@ angular.module('drawingService', [])
             getCategory : function(category){
                 return $http.get('/api/drawings/' + category);
             },
-            getSearch : function() {
-                return $http.get('/api/drawings/search');
+            getSearch : function(searchStr) {
+                return $http.get('/api/drawings/search/' + searchStr);
             },
             getFull : function(id){
                 return $http.get('/api/drawings/full/' + id);

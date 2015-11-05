@@ -116,19 +116,35 @@ nav ul li {
 	margin-right:20px;
 }
 
+@keyframes searchbarClose {
+  from {width:200px;}
+  to {width:20px;}
+}
+
 nav ul li input {
 	background-color: rgba(0,0,0,0);
     width: 20px;
     border:1px solid black;
     padding-left:5px;
+    animation: searchbarClose 1s;
+}
+
+@keyframes searchbarOpen {
+  from {width:20px;}
+  to {width:200px;}
 }
 
 nav ul li input:focus {
 	width:200px;
+  animation: searchbarOpen 1s;
 }
 
 .selected-nav {
 	border-bottom:1px solid blue;
+}
+
+.no-drawings {
+  margin-top:200px;
 }
 
 /***********************************

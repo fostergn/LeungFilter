@@ -3,4 +3,5 @@
 		<div class="masonry-brick" ng-repeat="drawing in drawings">
 			<a href="item/{{drawing._id}}"><img ng-src="img/drawings/{{drawing.url}}"></a>
 		</div>
+		<h1 class="no-drawings" ng-if="!drawings.length">sorry no drawings related to <br><br>"{{searchStr}}"</h1>
 	</div>

@@ -21,6 +21,24 @@ angular.module('mainController', ['wu.masonry'])
             .success(function(data){
                 $scope.drawings = data;
             });
+
+        $scope.search = function(){
+            if($scope.searchStr.length > 0){
+                $scope.drawings = [{url:"waiting.gif"}];
+                Drawings.getSearch($scope.searchStr)
+                    .success(function(data){
+                        $scope.drawings = data;
+                    });
+                } else {
+                    $scope.drawings = [{url:"waiting.gif"}];
+                    Drawings.getCategory($scope.selected)
+                        .success(function(data){
+                            $scope.drawings = data;
+                        });
+                }
+        }
+
+
     })
     // inject the Todo service factory into our controller
     .controller('homeCtrl', function($scope, Drawings) {

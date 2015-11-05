@@ -52,6 +52,8 @@ angular.module('mainController', ['wu.masonry'])
             .success(function(data){
                 $scope.drawing = data;
                 $scope.related[0] = data.full_image;
+                var link = data.full_image.url.split("/");
+                $scope.related[0].link = "full/" + link[0];
                 $scope.drawing.tag = data.tags[Math.floor(Math.random() * data.tags.length)];
                 Drawings.getRelatedCategory(data.category)
                     .success(function(data){
@@ -60,7 +62,7 @@ angular.module('mainController', ['wu.masonry'])
                         Drawings.getRandomDrawing()
                             .success(function(data){
                                 $scope.related[2] = data[0];
-                                $scope.related[2].link = "item/" + data[0]._id;
+                                $scope.related[2].link = "item/" + data[0]._id; 
                                 
                             });
                     });
@@ -75,5 +77,8 @@ angular.module('mainController', ['wu.masonry'])
     })
 
     .controller('subItemCtrl', function($scope, Drawings, $routeParams){
-
+        Drawings.getFull($routeParams.id)
+            .success(function(data){
+                $scope.drawings = data;
+            });
     });

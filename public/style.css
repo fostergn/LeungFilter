@@ -267,6 +267,7 @@ nav ul li input:focus {
 	border: 1px solid black;
 	padding:2px;
 	margin:2px;
+  max-width: 17vh;
 }
 
 .tag .prev, .tag .next {

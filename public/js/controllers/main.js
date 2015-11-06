@@ -1,7 +1,7 @@
 // js/controllers/main.js
 angular.module('mainController', ['wu.masonry'])
 
-    .controller('mainCtrl', function($scope, Drawings){
+    .controller('mainCtrl', function($scope, Drawings, $location){
         $scope.drawings = [{url:"waiting.gif"}];
         $scope.categories = ["food", "feet", "form", "text", "threads", "people", "plumes", "other"];
         var random = Math.floor(Math.random() * $scope.categories.length);
@@ -23,6 +23,10 @@ angular.module('mainController', ['wu.masonry'])
             });
 
         $scope.search = function(){
+            if ($location.path() !== "/"){
+                console.log('not home');
+                $location.path('/');
+            }
             if($scope.searchStr.length > 0){
                 $scope.drawings = [{url:"waiting.gif"}];
                 Drawings.getSearch($scope.searchStr)

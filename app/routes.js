@@ -207,7 +207,7 @@ module.exports = function(app){
 
 	app.get('/api/drawings/search/:searchStr', function(req, res){
 
-		Drawing.find({description:{$regex: req.params.searchStr}}, function(err, drawings) {
+		Drawing.find({ $or:[{description:{$regex: req.params.searchStr}}, {name:{$regex: req.params.searchStr}}, {"full_image.name":{$regex: req.params.searchStr}}, {"full_image.description":{$regex: req.params.searchStr}}]}, function(err, drawings) {
 
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
             if (err)

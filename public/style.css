@@ -179,6 +179,11 @@ nav ul li input:focus {
     align-items: center;
 }
 
+.feature-info-container {
+  display: flex;
+  align-items: center;
+}
+
 .feature-info h2 {
 	font-size:2em;
 }
@@ -320,12 +325,13 @@ nav ul li input:focus {
 ************************************/
 
 .show-full-image {
-  width:100vw;
-  height:100vh;
+  max-width:100vw;
+  max-height:100vh;
 }
 
 .show-full-image img {
   width:100%;
+  margin-bottom: 2em;
 }
 
 .full-info-toggle {
@@ -396,5 +402,54 @@ nav ul li input:focus {
 
   .related .tag {
   	bottom:7%;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    text-align:center;
+  }
+  header h1 {
+    padding-left:0px;
+  }
+
+  .feature {
+    display:block;
+    text-align:center;
+  }
+
+  .feature-info {
+    padding-left:0px;
+    width:300px;
+  }
+  .feature-image {
+    width:100%;
+  }
+
+  .item {
+    text-align:center;
+  }
+
+  .related {
+    display:block;
+    position:relative;
+    margin:0 auto 1em;
+    width:90vw;
+  }
+
+  .related >div {
+    display:inline-block;
+  }
+
+  .related .tag {
+    display:block;
+    position:absolute;
+    transform:none;
+    bottom:100%;
+    right:0;
+  }
+
+  .tag p {
+    border:none;
   }
 }

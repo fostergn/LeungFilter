@@ -58,9 +58,15 @@ a, a:visited, a:active, a:hover {
     display: none; 
 }
 
+@keyframes fadeImgIn {
+ from {opacity:0;}
+  to {opacity:1;}
+}
+
 .grid img {
 	width:280px;
 	padding:10px;
+  animation: fadeImgIn 1s;
 }
 
 .grid img:hover {

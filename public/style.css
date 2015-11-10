@@ -220,6 +220,7 @@ nav ul li input:focus {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     max-height:90%;
     max-width:90%;
@@ -231,6 +232,7 @@ nav ul li input:focus {
 	position: absolute;
     right: 5%;
     top: 15%;
+    -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
     font-size: 1.5em;
     background-color: yellow;
@@ -383,10 +385,9 @@ nav ul li input:focus {
   .feature-tag {
   	right: -5%; 
     top: 0%; 
-    transform: rotate(-90deg);
-
     left: -50%;
     top: 91%;
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     position: relative;
     width: 17%;
@@ -450,6 +451,7 @@ nav ul li input:focus {
   .related .tag {
     display:block;
     position:absolute;
+    -webkit-transform:none;
     transform:none;
     bottom:100%;
     right:0;
